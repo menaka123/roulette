@@ -76,7 +76,7 @@ function App() {
           finish ?
             <>
               <h1>¡Enhorabuena!</h1>
-              <span style={{fontSize: 22, marginBottom: 30, fontWeight: '500', maxWidth: 300, textAlign: 'center'}}>Has conseguido una ${prize} del Centenario</span>
+              <span style={{fontSize: 22, marginBottom: 30, fontWeight: '500', maxWidth: 300, textAlign: 'center'}}>Has conseguido una {prize} del Centenario</span>
               {
                 prize && <img style={{maxWidth: '70%', marginBottom: 50}} src={prizeList[prize].image} alt={'prize'}/>
               }

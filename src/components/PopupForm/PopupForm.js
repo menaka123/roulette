@@ -15,6 +15,7 @@ const PopupForm = ({show, sendData, loading}) => {
     carYear: '',
     changeCar: '',
     privacyPolicy: false,
+    privacyPolicySecond: false
   });
   const [errors, setErrors] = useState({});
 
@@ -35,6 +36,7 @@ const PopupForm = ({show, sendData, loading}) => {
     if (!formData.carYear) tempErrors.carYear = "Año del coche es obligatorio.";
     if (!formData.changeCar) tempErrors.changeCar = "Selecciona una opción.";
     if (!formData.privacyPolicy) tempErrors.privacyPolicy = "Debes aceptar la política de privacidad.";
+    if (!formData.privacyPolicySecond) tempErrors.privacyPolicySecond = "Debes aceptar la política de privacidad.";
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
   };
@@ -74,10 +76,10 @@ const PopupForm = ({show, sendData, loading}) => {
             <label>¿De qué año es tu coche?*</label>
             <select name="carYear" value={formData.carYear} onChange={handleChange}>
               <option value="">Selecciona el año</option>
-              <option value={'No tengo coche'}>No tengo coche</option>
               {
                 years.map(year => <option key={year} value={year}>{year}</option>)
               }
+              <option value={'No tengo coche'}>No tengo coche</option>
             </select>
             {errors.carYear && <span className="error">{errors.carYear}</span>}
           </div>
@@ -110,17 +112,17 @@ const PopupForm = ({show, sendData, loading}) => {
           <div className="form-group privacy-form-group">
             <label className={'privacy'}>
               <span>
-                 <input type="checkbox" name="privacyPolicySecond" />
+                 <input type="checkbox" name="privacyPolicySecond" checked={formData.privacyPolicySecond} onChange={handleChange} />
               </span>
               <span style={{display: 'inline-block'}} className="privacy-policy">
                 Acepto recibir <a href="https://www.leomotor.net/condiciones-de-envios-comerciales">info</a> de ofertas y descuentos del Grupo Leomotor
               </span>
             </label>
+            {errors.privacyPolicySecond && <span className="error">{errors.privacyPolicySecond}</span>}
           </div>
           <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
             <SpinButton type="submit" text={loading ? 'Loading...' : '¡OK!'}/>
           </div>
-
         </form>
       </div>
     </div>
