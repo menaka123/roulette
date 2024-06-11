@@ -1,0 +1,24 @@
+.image-button {
+  border: 2px solid white;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+  min-width: 250px;
+  min-height: 70px;
+  box-sizing: border-box;
+  outline: none;
+  transition: transform 0.3s ease;
+  background-color: #c02703;
+  padding: 15px 50px;
+  border-radius: 30px;
+  box-shadow: -1px 3px 2px 2px rgba(0,0,0,0.23);
+  font-weight: bold;
+}
+
+.image-button:hover {
+  transform: scale(1.03);
+}
+
+.image-button:active {
+  transform: scale(1.01);
+}
