@@ -100,9 +100,8 @@ const PopupForm = ({show, sendData, loading}) => {
               <span>
                  <input type="checkbox" name="privacyPolicy" checked={formData.privacyPolicy} onChange={handleChange}/>
               </span>
-              <span>
-                    He leído y acepto el <a href="https://www.leomotor.net/politica-de-privacidad">aviso legal y privacidad de
-              uso</a> de mis datos personales
+              <span style={{display: 'inline-block'}}>
+                Acepto la <a href="https://www.leomotor.net/politica-de-privacidad">política de privacidad</a>
               </span>
             </label>
             {errors.privacyPolicy && <span className="error">{errors.privacyPolicy}</span>}
@@ -113,8 +112,8 @@ const PopupForm = ({show, sendData, loading}) => {
               <span>
                  <input type="checkbox" name="privacyPolicySecond" />
               </span>
-              <span>
-                He leído y acepto las las <a href="https://www.leomotor.net/condiciones-de-envios-comerciales">condiciones legales</a> de envíos comerciales
+              <span style={{display: 'inline-block'}} className="privacy-policy">
+                Acepto recibir <a href="https://www.leomotor.net/condiciones-de-envios-comerciales">info</a> de ofertas y descuentos del Grupo Leomotor
               </span>
             </label>
           </div>
