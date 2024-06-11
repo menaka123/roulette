@@ -13,7 +13,7 @@ const PopupForm = ({show, sendData, loading}) => {
     email: '',
     phone: '',
     carYear: '',
-    changeCar: 'Si',
+    changeCar: '',
     privacyPolicy: false,
   });
   const [errors, setErrors] = useState({});
@@ -88,7 +88,7 @@ const PopupForm = ({show, sendData, loading}) => {
                 <input type="radio" name="changeCar" value="Si" checked={formData.changeCar === "Si"}
                        onChange={handleChange}/> Si
               </label>
-              <label style={{background: formData.changeCar !== "Si" ? 'rgb(255 186 15)' : 'lightgray'}}>
+              <label style={{background: formData.changeCar === "No" ? 'rgb(255 186 15)' : 'lightgray'}}>
                 <input type="radio" name="changeCar" value="No" checked={formData.changeCar === "No"}
                        onChange={handleChange}/> No
               </label>
